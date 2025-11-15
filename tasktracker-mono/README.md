@@ -53,6 +53,11 @@ tasktracker-mono/
   - Task statistics (counts by status/priority)
   - Mark tasks as completed/incomplete
   
+- **Statistics Module**
+  - User statistics (total tasks, completion percentage)
+  - Reuses TaskRepository for efficient queries
+  - Real-time calculation based on current data
+  
 - **Database**
   - PostgreSQL with SQLAlchemy ORM
   - Alembic migrations
@@ -340,6 +345,63 @@ Authorization: Bearer <access_token>
   "high_priority": 5,
   "medium_priority": 12,
   "low_priority": 8
+}
+```
+
+## 📊 Statistics Endpoint
+
+### Get User Statistics
+
+**GET** `/api/v1/stats/`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Description:**
+Get aggregated statistics for the authenticated user including total tasks and completion percentage.
+
+**Response:**
+```json
+{
+  "total_tasks": 10,
+  "completed_tasks": 3,
+  "completed_percentage": 30.0
+}
+```
+
+**Response Fields:**
+- `total_tasks`: Total number of tasks for the user
+- `completed_tasks`: Number of completed tasks (status = DONE or is_completed = true)
+- `completed_percentage`: Percentage of completed tasks (0.0 to 100.0, rounded to 2 decimals)
+
+**Examples:**
+
+No tasks:
+```json
+{
+  "total_tasks": 0,
+  "completed_tasks": 0,
+  "completed_percentage": 0.0
+}
+```
+
+Partial completion:
+```json
+{
+  "total_tasks": 3,
+  "completed_tasks": 1,
+  "completed_percentage": 33.33
+}
+```
+
+All completed:
+```json
+{
+  "total_tasks": 5,
+  "completed_tasks": 5,
+  "completed_percentage": 100.0
 }
 ```
 

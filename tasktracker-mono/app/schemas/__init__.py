@@ -16,6 +16,9 @@ from app.schemas.task import (
     TaskListResponse,
     TaskStats,
 )
+from app.schemas.stats import (
+    StatsResponse,
+)
 
 __all__ = [
     # User schemas
@@ -34,4 +37,6 @@ __all__ = [
     "TaskOut",
     "TaskListResponse",
     "TaskStats",
+    # Stats schemas
+    "StatsResponse",
 ]
