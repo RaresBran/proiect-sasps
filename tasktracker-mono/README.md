@@ -45,16 +45,25 @@ tasktracker-mono/
   - Login and token generation
   - Get current user endpoint
   
+- **Task Management System**
+  - Full CRUD operations for tasks
+  - User-scoped tasks (users only see their own tasks)
+  - Task filtering by status and priority
+  - Pagination support
+  - Task statistics (counts by status/priority)
+  - Mark tasks as completed/incomplete
+  
 - **Database**
   - PostgreSQL with SQLAlchemy ORM
   - Alembic migrations
-  - User and Task models
+  - User and Task models with relationships
   
 - **Security**
   - Password hashing with Passlib
   - JWT tokens with configurable expiration
   - OAuth2 Bearer authentication
   - Protected endpoints with dependencies
+  - User isolation (tasks scoped to owner)
 
 ## 📋 Prerequisites
 
@@ -184,6 +193,153 @@ Authorization: Bearer <access_token>
   "is_superuser": false,
   "created_at": "2024-01-15T10:00:00",
   "updated_at": "2024-01-15T10:00:00"
+}
+```
+
+## 📋 Task Management Endpoints
+
+### 1. Create Task
+
+**POST** `/api/v1/tasks/`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Request:**
+```json
+{
+  "title": "Complete project",
+  "description": "Finish the FastAPI project",
+  "status": "todo",
+  "priority": "high",
+  "due_date": "2024-12-31T23:59:59"
+}
+```
+
+**Response:** (201 Created)
+```json
+{
+  "id": 1,
+  "title": "Complete project",
+  "description": "Finish the FastAPI project",
+  "status": "todo",
+  "priority": "high",
+  "is_completed": false,
+  "due_date": "2024-12-31T23:59:59",
+  "owner_id": 1,
+  "created_at": "2024-01-15T10:00:00",
+  "updated_at": "2024-01-15T10:00:00"
+}
+```
+
+### 2. Get All Tasks
+
+**GET** `/api/v1/tasks/?skip=0&limit=100&status=todo&priority=high`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Query Parameters:**
+- `skip`: Number of records to skip (default: 0)
+- `limit`: Maximum records to return (default: 100, max: 1000)
+- `status`: Filter by status (optional: todo, in_progress, done)
+- `priority`: Filter by priority (optional: low, medium, high)
+
+**Response:**
+```json
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Complete project",
+      "status": "todo",
+      "priority": "high",
+      ...
+    }
+  ],
+  "total": 10,
+  "skip": 0,
+  "limit": 100
+}
+```
+
+### 3. Get Task by ID
+
+**GET** `/api/v1/tasks/{task_id}`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Response:** Task object or 404 if not found
+
+### 4. Update Task
+
+**PUT** `/api/v1/tasks/{task_id}`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Request:**
+```json
+{
+  "title": "Updated title",
+  "status": "in_progress",
+  "priority": "medium"
+}
+```
+
+**Response:** Updated task object or 404 if not found
+
+### 5. Delete Task
+
+**DELETE** `/api/v1/tasks/{task_id}`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Response:** 204 No Content or 404 if not found
+
+### 6. Mark Task as Completed
+
+**PATCH** `/api/v1/tasks/{task_id}/complete`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Response:** Updated task with `is_completed: true` and `status: done`
+
+### 7. Get Task Statistics
+
+**GET** `/api/v1/tasks/stats`
+
+**Headers:**
+```
+Authorization: Bearer <access_token>
+```
+
+**Response:**
+```json
+{
+  "total": 25,
+  "todo": 10,
+  "in_progress": 8,
+  "done": 7,
+  "completed": 7,
+  "high_priority": 5,
+  "medium_priority": 12,
+  "low_priority": 8
 }
 ```
 
