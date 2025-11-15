@@ -1,207 +1,299 @@
-# TaskTracker Monolithic API
+# TaskTracker - Monolithic FastAPI Application
 
-A monolithic FastAPI application for task management with authentication, built using layered architecture.
+A production-ready task management API built with FastAPI, PostgreSQL, and layered architecture. This project demonstrates modern Python web development practices including authentication, CRUD operations, and comprehensive testing.
+
+---
+
+## 📋 Table of Contents
+
+- [Project Purpose](#-project-purpose)
+- [Architecture](#-architecture)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Quick Start with Docker](#-quick-start-with-docker)
+- [Running Migrations](#-running-migrations)
+- [API Examples](#-api-examples)
+- [Development](#-development)
+- [Testing](#-testing)
+- [Project Structure](#-project-structure)
+
+---
+
+## 🎯 Project Purpose
+
+TaskTracker is a monolithic REST API application designed for task management with user authentication. The project serves as a comprehensive example of:
+
+- **Clean Architecture**: Layered design with clear separation of concerns
+- **Repository Pattern**: Abstracted data access layer
+- **Service Layer**: Business logic separated from controllers
+- **Secure Authentication**: JWT-based authentication with bcrypt password hashing
+- **Database Migrations**: Version-controlled schema changes with Alembic
+- **Containerization**: Production-ready Docker setup
+- **Test Coverage**: Comprehensive integration tests
+
+**Use Cases:**
+- Personal task management
+- Team productivity tracking
+- Learning FastAPI and modern Python patterns
+- Building RESTful APIs with authentication
+
+---
 
 ## 🏗️ Architecture
 
-This project follows a **layered architecture** pattern:
+### Layered Architecture
 
 ```
-Presentation Layer (Routers) 
-    ↓
-Business Logic Layer (Services)
-    ↓
-Data Access Layer (Repositories)
-    ↓
-Database (PostgreSQL)
+┌─────────────────────────────────────────────────────────┐
+│                    Client Layer                          │
+│              (Web, Mobile, API Clients)                  │
+└────────────────────────┬────────────────────────────────┘
+                         │ HTTP/JSON
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│               Presentation Layer (Routers)               │
+│  • AuthRouter    • TaskRouter    • StatsRouter          │
+│  • Request validation                                    │
+│  • Response serialization                                │
+│  • Authentication middleware                             │
+└────────────────────────┬────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│              Business Logic Layer (Services)             │
+│  • AuthService   • TaskService   • StatsService          │
+│  • Business rules                                        │
+│  • Data transformation                                   │
+│  • Service orchestration                                 │
+└────────────────────────┬────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│            Data Access Layer (Repositories)              │
+│  • UserRepository   • TaskRepository                     │
+│  • Database queries                                      │
+│  • Transaction management                                │
+└────────────────────────┬────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│                  Database Layer (PostgreSQL)             │
+│  • Users table    • Tasks table                          │
+│  • Relationships  • Constraints                          │
+└─────────────────────────────────────────────────────────┘
 ```
 
-## 📁 Project Structure
+### Design Patterns
 
+- **Repository Pattern**: Abstracts database operations
+- **Service Layer Pattern**: Encapsulates business logic
+- **Dependency Injection**: FastAPI's built-in DI system
+- **DTO Pattern**: Pydantic schemas for data transfer
+
+---
+
+## ✨ Features
+
+### Authentication & Authorization
+- ✅ User registration with email validation
+- ✅ JWT token-based authentication
+- ✅ Bcrypt password hashing
+- ✅ Protected endpoints with OAuth2 Bearer
+
+### Task Management
+- ✅ Full CRUD operations (Create, Read, Update, Delete)
+- ✅ Task filtering by status and priority
+- ✅ Pagination support
+- ✅ User-scoped tasks (complete isolation)
+- ✅ Mark tasks as completed/incomplete
+
+### Statistics
+- ✅ User statistics (total tasks, completion percentage)
+- ✅ Real-time calculation
+
+### Database
+- ✅ PostgreSQL with SQLAlchemy ORM
+- ✅ Alembic migrations
+- ✅ Relationship management
+- ✅ Automatic timestamps
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technology |
+|----------|------------|
+| **Framework** | FastAPI 0.109.0 |
+| **Language** | Python 3.11+ |
+| **Database** | PostgreSQL 15 |
+| **ORM** | SQLAlchemy 2.0 |
+| **Migrations** | Alembic 1.13 |
+| **Authentication** | JWT (python-jose) |
+| **Password Hashing** | Passlib with bcrypt |
+| **Validation** | Pydantic v2 |
+| **Testing** | Pytest |
+| **ASGI Server** | Uvicorn |
+| **Containerization** | Docker & Docker Compose |
+
+---
+
+## 🚀 Quick Start with Docker
+
+### Prerequisites
+
+- Docker Desktop 20.10+
+- Docker Compose 2.0+
+
+### Step 1: Clone the Repository
+
+```bash
+git clone <repository-url>
+cd tasktracker-mono
 ```
-tasktracker-mono/
-├── app/
-│   ├── routers/         # API endpoints (Presentation layer)
-│   ├── services/        # Business logic
-│   ├── repositories/    # Data access layer
-│   ├── models/          # SQLAlchemy ORM models
-│   ├── schemas/         # Pydantic schemas (DTOs)
-│   ├── core/           # Configuration, security, database
-│   └── utils/          # Utility functions
-├── migrations/         # Alembic database migrations
-├── tests/             # Test suite
-├── .env.example       # Environment variables template
-└── requirements.txt   # Python dependencies
-```
 
-## 🚀 Features
-
-### ✅ Implemented
-
-- **Authentication System**
-  - User registration with email and username validation
-  - Password hashing using bcrypt
-  - JWT token-based authentication
-  - Login and token generation
-  - Get current user endpoint
-  
-- **Task Management System**
-  - Full CRUD operations for tasks
-  - User-scoped tasks (users only see their own tasks)
-  - Task filtering by status and priority
-  - Pagination support
-  - Task statistics (counts by status/priority)
-  - Mark tasks as completed/incomplete
-  
-- **Statistics Module**
-  - User statistics (total tasks, completion percentage)
-  - Reuses TaskRepository for efficient queries
-  - Real-time calculation based on current data
-  
-- **Database**
-  - PostgreSQL with SQLAlchemy ORM
-  - Alembic migrations
-  - User and Task models with relationships
-  
-- **Security**
-  - Password hashing with Passlib
-  - JWT tokens with configurable expiration
-  - OAuth2 Bearer authentication
-  - Protected endpoints with dependencies
-  - User isolation (tasks scoped to owner)
-
-## 📋 Prerequisites
-
-- Python 3.11+
-- PostgreSQL 14+
-- pip or poetry for dependency management
-
-## 🔧 Installation
-
-1. **Clone the repository**
-   ```bash
-   cd tasktracker-mono
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-5. **Set up the database**
-   ```bash
-   # Create PostgreSQL database
-   createdb tasktracker_db
-   
-   # Run migrations
-   alembic upgrade head
-   ```
-
-## 🏃 Running the Application
-
-### Option 1: Docker (Recommended) 🐳
-
-**Prerequisites:** Docker Desktop 20.10+ and Docker Compose 2.0+
+### Step 2: Start the Application
 
 ```bash
 # Build and start all services (FastAPI + PostgreSQL)
 docker compose up --build
 
-# Or run in detached mode
+# Or run in detached mode (background)
 docker compose up -d --build
+```
 
-# View logs
-docker compose logs -f
+### Step 3: Verify the Application
 
+The application will be available at:
+
+- **API**: http://localhost:8000
+- **Interactive API Docs (Swagger UI)**: http://localhost:8000/docs
+- **Alternative API Docs (ReDoc)**: http://localhost:8000/redoc
+- **Health Check**: http://localhost:8000/health
+
+### Step 4: Stop the Application
+
+```bash
 # Stop services
 docker compose down
+
+# Stop and remove volumes (⚠️ deletes all data)
+docker compose down -v
 ```
 
-**Access the application:**
-- API: http://localhost:8000
-- API Docs: http://localhost:8000/docs
-- Health Check: http://localhost:8000/health
+### What Happens on Startup?
 
-**Note:** Database migrations run automatically on container startup.
+1. **PostgreSQL** starts with persistent volume
+2. **Database health check** verifies PostgreSQL is ready
+3. **FastAPI app** waits for database
+4. **Migrations** run automatically (`alembic upgrade head`)
+5. **Application** starts on port 8000
 
-📖 **See [DOCKER.md](DOCKER.md) for detailed Docker documentation.**
+---
 
-### Option 2: Local Development
+## 🔄 Running Migrations
 
-**Prerequisites:** Python 3.11+, PostgreSQL 14+
+### Automatic Migrations (Docker)
 
-#### Development Mode
+Migrations run automatically when using Docker Compose:
 
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+docker compose up
 ```
 
-#### Production Mode
+### Manual Migrations (Docker)
 
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+# Access the app container
+docker exec -it tasktracker_app bash
+
+# Run migrations
+alembic upgrade head
+
+# Rollback one migration
+alembic downgrade -1
+
+# View current migration
+alembic current
+
+# View migration history
+alembic history
 ```
 
-## 📝 API Documentation
+### Manual Migrations (Local Development)
 
-Once the application is running, visit:
+```bash
+# Activate virtual environment
+source venv/bin/activate
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+# Run migrations
+alembic upgrade head
 
-## 🔐 Authentication Endpoints
+# Create a new migration
+alembic revision --autogenerate -m "description of changes"
 
-### 1. Register User
-
-**POST** `/api/v1/auth/register`
-
-```json
-{
-  "email": "user@example.com",
-  "username": "johndoe",
-  "password": "securepassword123",
-  "full_name": "John Doe"
-}
+# Rollback
+alembic downgrade -1
 ```
 
-**Response:**
+### Migration Structure
+
+```
+migrations/
+├── versions/
+│   └── 001_initial_migration.py  # Creates users and tasks tables
+├── env.py                         # Alembic environment config
+└── script.py.mako                 # Migration template
+```
+
+---
+
+## 📝 API Examples
+
+### Base URL
+
+```
+http://localhost:8000/api/v1
+```
+
+### 1. Register a New User
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/auth/register" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "username": "johndoe",
+    "password": "securepass123",
+    "full_name": "John Doe"
+  }'
+```
+
+**Response (201 Created):**
 ```json
 {
   "id": 1,
-  "email": "user@example.com",
+  "email": "john@example.com",
   "username": "johndoe",
   "full_name": "John Doe",
   "is_active": true,
   "is_superuser": false,
-  "created_at": "2024-01-15T10:00:00",
-  "updated_at": "2024-01-15T10:00:00"
+  "created_at": "2024-11-15T10:00:00",
+  "updated_at": "2024-11-15T10:00:00"
 }
 ```
 
-### 2. Login
+### 2. Login and Get Token
 
-**POST** `/api/v1/auth/login`
-
-```json
-{
-  "username": "johndoe",
-  "password": "securepassword123"
-}
+```bash
+curl -X POST "http://localhost:8000/api/v1/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "johndoe",
+    "password": "securepass123"
+  }'
 ```
 
-**Response:**
+**Response (200 OK):**
 ```json
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -209,189 +301,87 @@ Once the application is running, visit:
 }
 ```
 
-### 3. Get Current User
+**Save the token** - you'll need it for authenticated requests!
 
-**GET** `/api/v1/auth/me`
+### 3. Get Current User Info
 
-**Headers:**
+```bash
+curl -X GET "http://localhost:8000/api/v1/auth/me" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
-Authorization: Bearer <access_token>
+
+### 4. Create a Task
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/tasks/" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Complete project documentation",
+    "description": "Write comprehensive README",
+    "status": "todo",
+    "priority": "high",
+    "due_date": "2024-12-31T23:59:59"
+  }'
 ```
 
-**Response:**
+**Response (201 Created):**
 ```json
 {
   "id": 1,
-  "email": "user@example.com",
-  "username": "johndoe",
-  "full_name": "John Doe",
-  "is_active": true,
-  "is_superuser": false,
-  "created_at": "2024-01-15T10:00:00",
-  "updated_at": "2024-01-15T10:00:00"
-}
-```
-
-## 📋 Task Management Endpoints
-
-### 1. Create Task
-
-**POST** `/api/v1/tasks/`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
-
-**Request:**
-```json
-{
-  "title": "Complete project",
-  "description": "Finish the FastAPI project",
-  "status": "todo",
-  "priority": "high",
-  "due_date": "2024-12-31T23:59:59"
-}
-```
-
-**Response:** (201 Created)
-```json
-{
-  "id": 1,
-  "title": "Complete project",
-  "description": "Finish the FastAPI project",
+  "title": "Complete project documentation",
+  "description": "Write comprehensive README",
   "status": "todo",
   "priority": "high",
   "is_completed": false,
   "due_date": "2024-12-31T23:59:59",
   "owner_id": 1,
-  "created_at": "2024-01-15T10:00:00",
-  "updated_at": "2024-01-15T10:00:00"
+  "created_at": "2024-11-15T10:00:00",
+  "updated_at": "2024-11-15T10:00:00"
 }
 ```
 
-### 2. Get All Tasks
+### 5. Get All Tasks
 
-**GET** `/api/v1/tasks/?skip=0&limit=100&status=todo&priority=high`
+```bash
+# Get all tasks with pagination
+curl -X GET "http://localhost:8000/api/v1/tasks/?skip=0&limit=10" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
+# Filter by status
+curl -X GET "http://localhost:8000/api/v1/tasks/?status=todo" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
-**Query Parameters:**
-- `skip`: Number of records to skip (default: 0)
-- `limit`: Maximum records to return (default: 100, max: 1000)
-- `status`: Filter by status (optional: todo, in_progress, done)
-- `priority`: Filter by priority (optional: low, medium, high)
-
-**Response:**
-```json
-{
-  "tasks": [
-    {
-      "id": 1,
-      "title": "Complete project",
-      "status": "todo",
-      "priority": "high",
-      ...
-    }
-  ],
-  "total": 10,
-  "skip": 0,
-  "limit": 100
-}
+# Filter by priority
+curl -X GET "http://localhost:8000/api/v1/tasks/?priority=high" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
-### 3. Get Task by ID
+### 6. Update a Task
 
-**GET** `/api/v1/tasks/{task_id}`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
-
-**Response:** Task object or 404 if not found
-
-### 4. Update Task
-
-**PUT** `/api/v1/tasks/{task_id}`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
+```bash
+curl -X PUT "http://localhost:8000/api/v1/tasks/1" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "in_progress",
+    "priority": "medium"
+  }'
 ```
 
-**Request:**
-```json
-{
-  "title": "Updated title",
-  "status": "in_progress",
-  "priority": "medium"
-}
+### 7. Mark Task as Completed
+
+```bash
+curl -X PATCH "http://localhost:8000/api/v1/tasks/1/complete" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
-**Response:** Updated task object or 404 if not found
+### 8. Get User Statistics
 
-### 5. Delete Task
-
-**DELETE** `/api/v1/tasks/{task_id}`
-
-**Headers:**
+```bash
+curl -X GET "http://localhost:8000/api/v1/stats/" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
-Authorization: Bearer <access_token>
-```
-
-**Response:** 204 No Content or 404 if not found
-
-### 6. Mark Task as Completed
-
-**PATCH** `/api/v1/tasks/{task_id}/complete`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
-
-**Response:** Updated task with `is_completed: true` and `status: done`
-
-### 7. Get Task Statistics
-
-**GET** `/api/v1/tasks/stats`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
-
-**Response:**
-```json
-{
-  "total": 25,
-  "todo": 10,
-  "in_progress": 8,
-  "done": 7,
-  "completed": 7,
-  "high_priority": 5,
-  "medium_priority": 12,
-  "low_priority": 8
-}
-```
-
-## 📊 Statistics Endpoint
-
-### Get User Statistics
-
-**GET** `/api/v1/stats/`
-
-**Headers:**
-```
-Authorization: Bearer <access_token>
-```
-
-**Description:**
-Get aggregated statistics for the authenticated user including total tasks and completion percentage.
 
 **Response:**
 ```json
@@ -402,174 +392,283 @@ Get aggregated statistics for the authenticated user including total tasks and c
 }
 ```
 
-**Response Fields:**
-- `total_tasks`: Total number of tasks for the user
-- `completed_tasks`: Number of completed tasks (status = DONE or is_completed = true)
-- `completed_percentage`: Percentage of completed tasks (0.0 to 100.0, rounded to 2 decimals)
+### 9. Delete a Task
 
-**Examples:**
-
-No tasks:
-```json
-{
-  "total_tasks": 0,
-  "completed_tasks": 0,
-  "completed_percentage": 0.0
-}
+```bash
+curl -X DELETE "http://localhost:8000/api/v1/tasks/1" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
-Partial completion:
-```json
-{
-  "total_tasks": 3,
-  "completed_tasks": 1,
-  "completed_percentage": 33.33
-}
+**Response:** 204 No Content
+
+---
+
+## 💻 Development
+
+### Local Setup (Without Docker)
+
+#### Prerequisites
+- Python 3.11+
+- PostgreSQL 14+
+- pip or poetry
+
+#### Steps
+
+1. **Create virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your database credentials
+   ```
+
+4. **Create database**
+   ```bash
+   createdb tasktracker_db
+   ```
+
+5. **Run migrations**
+   ```bash
+   alembic upgrade head
+   ```
+
+6. **Start the application**
+   ```bash
+   # Development mode (with auto-reload)
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   
+   # Production mode
+   uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+   ```
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+# Application
+APP_NAME=TaskTracker Monolithic API
+DEBUG=False
+
+# Database
+DATABASE_URL=postgresql://tasktracker:tasktracker@localhost:5432/tasktracker_db
+
+# Security
+SECRET_KEY=your-secret-key-change-this-in-production
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# CORS
+BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:8000"]
 ```
 
-All completed:
-```json
-{
-  "total_tasks": 5,
-  "completed_tasks": 5,
-  "completed_percentage": 100.0
-}
-```
-
-## 🗄️ Database Models
-
-### User Model
-- `id`: Primary key
-- `email`: Unique email address
-- `username`: Unique username
-- `hashed_password`: Bcrypt hashed password
-- `full_name`: Optional full name
-- `is_active`: Account active status
-- `is_superuser`: Admin privileges flag
-- `created_at`: Timestamp
-- `updated_at`: Timestamp
-
-### Task Model
-- `id`: Primary key
-- `title`: Task title
-- `description`: Task description
-- `status`: Enum (TODO, IN_PROGRESS, DONE)
-- `priority`: Enum (LOW, MEDIUM, HIGH)
-- `is_completed`: Boolean flag
-- `due_date`: Optional due date
-- `owner_id`: Foreign key to User
-- `created_at`: Timestamp
-- `updated_at`: Timestamp
+---
 
 ## 🧪 Testing
 
-Run tests with pytest:
+### Run Tests with Docker
 
 ```bash
+# All tests
+docker compose run --rm app pytest
+
+# With coverage
+docker compose run --rm app pytest --cov=app tests/
+
+# Specific test file
+docker compose run --rm app pytest tests/integration/test_auth.py
+
+# Verbose output
+docker compose run --rm app pytest -v
+```
+
+### Run Tests Locally
+
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
 # Run all tests
 pytest
 
-# Run with coverage
+# With coverage report
 pytest --cov=app tests/
 
-# Run specific test file
-pytest tests/integration/test_auth.py
+# Generate HTML coverage report
+pytest --cov=app --cov-report=html tests/
 ```
 
-## 🔄 Database Migrations
+### Test Structure
 
-### Create a new migration
-
-```bash
-alembic revision --autogenerate -m "Description of changes"
+```
+tests/
+├── integration/
+│   ├── test_auth.py      # Authentication tests (6 tests)
+│   ├── test_tasks.py     # Task management tests (18 tests)
+│   └── test_stats.py     # Statistics tests (9 tests)
+├── unit/                 # Unit tests (future)
+└── conftest.py           # Pytest fixtures
 ```
 
-### Apply migrations
+**Total: 33 integration tests**
 
-```bash
-alembic upgrade head
+---
+
+## 📁 Project Structure
+
+```
+tasktracker-mono/
+├── app/
+│   ├── core/                    # Core configuration
+│   │   ├── config.py           # Settings management
+│   │   ├── database.py         # Database connection
+│   │   ├── dependencies.py     # FastAPI dependencies
+│   │   └── security.py         # Authentication utilities
+│   │
+│   ├── models/                  # SQLAlchemy ORM models
+│   │   ├── user.py             # User model
+│   │   └── task.py             # Task model
+│   │
+│   ├── schemas/                 # Pydantic schemas (DTOs)
+│   │   ├── user.py             # User schemas
+│   │   ├── task.py             # Task schemas
+│   │   └── stats.py            # Statistics schemas
+│   │
+│   ├── repositories/            # Data access layer
+│   │   ├── user_repository.py  # User database operations
+│   │   └── task_repository.py  # Task database operations
+│   │
+│   ├── services/                # Business logic layer
+│   │   ├── user_service.py     # User/Auth service
+│   │   ├── task_service.py     # Task service
+│   │   └── stats_service.py    # Statistics service
+│   │
+│   ├── routers/                 # API endpoints
+│   │   ├── users.py            # Auth endpoints
+│   │   ├── tasks.py            # Task endpoints
+│   │   └── stats.py            # Statistics endpoints
+│   │
+│   └── main.py                  # Application entry point
+│
+├── migrations/                  # Alembic migrations
+│   ├── versions/
+│   │   └── 001_initial_migration.py
+│   └── env.py
+│
+├── tests/                       # Test suite
+│   ├── integration/
+│   │   ├── test_auth.py
+│   │   ├── test_tasks.py
+│   │   └── test_stats.py
+│   └── conftest.py
+│
+├── Dockerfile                   # Docker image definition
+├── docker-compose.yml           # Docker orchestration
+├── .dockerignore                # Docker build exclusions
+├── requirements.txt             # Python dependencies
+├── alembic.ini                  # Alembic configuration
+├── pytest.ini                   # Pytest configuration
+├── .env.example                 # Environment template
+└── README.md                    # This file
 ```
 
-### Rollback migration
+---
 
-```bash
-alembic downgrade -1
-```
+## 📊 API Endpoints Summary
 
-## 🐳 Docker Support
+### Authentication (3 endpoints)
+- `POST /api/v1/auth/register` - Register new user
+- `POST /api/v1/auth/login` - Login and get JWT token
+- `GET /api/v1/auth/me` - Get current user info
 
-Complete Docker setup with PostgreSQL included!
+### Tasks (8 endpoints)
+- `POST /api/v1/tasks/` - Create task
+- `GET /api/v1/tasks/` - Get all tasks (with filters)
+- `GET /api/v1/tasks/{id}` - Get task by ID
+- `PUT /api/v1/tasks/{id}` - Update task
+- `DELETE /api/v1/tasks/{id}` - Delete task
+- `PATCH /api/v1/tasks/{id}/complete` - Mark as completed
+- `PATCH /api/v1/tasks/{id}/incomplete` - Mark as incomplete
+- `GET /api/v1/tasks/stats` - Get task statistics
 
-```bash
-# Quick start with Docker
-docker compose up --build
-```
+### Statistics (1 endpoint)
+- `GET /api/v1/stats/` - Get user statistics
 
-See [DOCKER.md](DOCKER.md) for:
-- Complete Docker configuration
-- Production deployment guide
-- Health checks and monitoring
-- Database backup/restore
-- Troubleshooting tips
+**Total: 12 API endpoints**
 
-## 📚 Technology Stack
+---
 
-- **Framework**: FastAPI 0.109.0
-- **Database**: PostgreSQL with SQLAlchemy 2.0
-- **Migrations**: Alembic
-- **Authentication**: JWT with python-jose
-- **Password Hashing**: Passlib with bcrypt
-- **Validation**: Pydantic v2
-- **Testing**: Pytest
-- **ASGI Server**: Uvicorn
+## 🔒 Security Features
 
-## 🏛️ Architecture Patterns
+- ✅ JWT token-based authentication
+- ✅ Bcrypt password hashing
+- ✅ OAuth2 Bearer token scheme
+- ✅ User-scoped data access
+- ✅ SQL injection protection (SQLAlchemy ORM)
+- ✅ CORS configuration
+- ✅ Non-root Docker user
+- ✅ Environment-based secrets
 
-### Repository Pattern
-Abstracts data access logic into repository classes, making the code more maintainable and testable.
+---
 
-```python
-class UserRepository:
-    def get_by_id(self, user_id: int) -> Optional[User]
-    def create(self, user_create: UserCreate) -> Optional[User]
-    def update(self, user_id: int, user_update: UserUpdate) -> Optional[User]
-    def delete(self, user_id: int) -> bool
-```
+## 📚 Additional Resources
 
-### Service Layer
-Contains business logic and orchestrates operations between repositories.
+### Interactive API Documentation
+Once running, visit:
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
 
-```python
-class AuthService:
-    def register(self, user_create: UserCreate) -> Optional[UserResponse]
-    def login(self, user_login: UserLogin) -> Optional[Token]
-    def authenticate_user(self, username: str, password: str) -> Optional[User]
-```
+### Database Schema
 
-### Dependency Injection
-Uses FastAPI's dependency injection system for database sessions and authentication.
+**Users Table:**
+- id, email (unique), username (unique), hashed_password
+- full_name, is_active, is_superuser
+- created_at, updated_at
 
-```python
-def get_current_user(
-    db: Session = Depends(get_db),
-    token: str = Depends(oauth2_scheme)
-) -> User:
-    ...
-```
+**Tasks Table:**
+- id, title, description
+- status (todo/in_progress/done), priority (low/medium/high)
+- is_completed, due_date
+- owner_id (FK to users), created_at, updated_at
 
-## 🔒 Security
-
-- Passwords are hashed using bcrypt
-- JWT tokens with configurable expiration
-- OAuth2 Bearer token authentication
-- Protected endpoints with role-based access control
-- SQL injection prevention through SQLAlchemy ORM
+---
 
 ## 📄 License
 
 This project is for educational purposes.
 
+---
+
 ## 👥 Contributing
 
 This is a university project. Contributions are welcome for learning purposes!
 
+---
+
+## 🎉 Summary
+
+TaskTracker is a complete, production-ready FastAPI application demonstrating:
+- ✅ Clean layered architecture
+- ✅ Repository and Service patterns
+- ✅ JWT authentication
+- ✅ Full CRUD operations
+- ✅ Docker containerization
+- ✅ Database migrations
+- ✅ Comprehensive testing
+
+**Get started in 2 commands:**
+```bash
+docker compose up --build
+open http://localhost:8000/docs
+```
+
+Enjoy building with TaskTracker! 🚀
