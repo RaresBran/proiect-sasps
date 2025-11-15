@@ -111,13 +111,44 @@ tasktracker-mono/
 
 ## 🏃 Running the Application
 
-### Development Mode
+### Option 1: Docker (Recommended) 🐳
+
+**Prerequisites:** Docker Desktop 20.10+ and Docker Compose 2.0+
+
+```bash
+# Build and start all services (FastAPI + PostgreSQL)
+docker compose up --build
+
+# Or run in detached mode
+docker compose up -d --build
+
+# View logs
+docker compose logs -f
+
+# Stop services
+docker compose down
+```
+
+**Access the application:**
+- API: http://localhost:8000
+- API Docs: http://localhost:8000/docs
+- Health Check: http://localhost:8000/health
+
+**Note:** Database migrations run automatically on container startup.
+
+📖 **See [DOCKER.md](DOCKER.md) for detailed Docker documentation.**
+
+### Option 2: Local Development
+
+**Prerequisites:** Python 3.11+, PostgreSQL 14+
+
+#### Development Mode
 
 ```bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Production Mode
+#### Production Mode
 
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
@@ -467,7 +498,19 @@ alembic downgrade -1
 
 ## 🐳 Docker Support
 
-Coming soon! Docker and docker-compose configurations will be added.
+Complete Docker setup with PostgreSQL included!
+
+```bash
+# Quick start with Docker
+docker compose up --build
+```
+
+See [DOCKER.md](DOCKER.md) for:
+- Complete Docker configuration
+- Production deployment guide
+- Health checks and monitoring
+- Database backup/restore
+- Troubleshooting tips
 
 ## 📚 Technology Stack
 
