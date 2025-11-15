@@ -8,8 +8,20 @@ from app.schemas.user import (
     Token,
     TokenPayload,
 )
+from app.schemas.task import (
+    TaskBase,
+    TaskCreate,
+    TaskUpdate,
+    TaskOut,
+    TaskListResponse,
+    TaskStats,
+)
+from app.schemas.stats import (
+    StatsResponse,
+)
 
 __all__ = [
+    # User schemas
     "UserBase",
     "UserCreate",
     "UserLogin",
@@ -18,5 +30,13 @@ __all__ = [
     "UserInDB",
     "Token",
     "TokenPayload",
+    # Task schemas
+    "TaskBase",
+    "TaskCreate",
+    "TaskUpdate",
+    "TaskOut",
+    "TaskListResponse",
+    "TaskStats",
+    # Stats schemas
+    "StatsResponse",
 ]
-
