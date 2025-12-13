@@ -165,10 +165,10 @@ docker compose up -d --build
 
 The application will be available at:
 
-- **API**: http://localhost:8000
-- **Interactive API Docs (Swagger UI)**: http://localhost:8000/docs
-- **Alternative API Docs (ReDoc)**: http://localhost:8000/redoc
-- **Health Check**: http://localhost:8000/health
+- **API**: http://localhost:9000
+- **Interactive API Docs (Swagger UI)**: http://localhost:9000/docs
+- **Alternative API Docs (ReDoc)**: http://localhost:9000/redoc
+- **Health Check**: http://localhost:9000/health
 
 ### Step 4: Stop the Application
 
@@ -252,13 +252,13 @@ migrations/
 ### Base URL
 
 ```
-http://localhost:8000/api/v1
+http://localhost:9000/api/v1
 ```
 
 ### 1. Register a New User
 
 ```bash
-curl -X POST "http://localhost:8000/api/v1/auth/register" \
+curl -X POST "http://localhost:9000/api/v1/auth/register" \
   -H "Content-Type: application/json" \
   -d '{
     "email": "john@example.com",
@@ -285,7 +285,7 @@ curl -X POST "http://localhost:8000/api/v1/auth/register" \
 ### 2. Login and Get Token
 
 ```bash
-curl -X POST "http://localhost:8000/api/v1/auth/login" \
+curl -X POST "http://localhost:9000/api/v1/auth/login" \
   -H "Content-Type: application/json" \
   -d '{
     "username": "johndoe",
@@ -306,14 +306,14 @@ curl -X POST "http://localhost:8000/api/v1/auth/login" \
 ### 3. Get Current User Info
 
 ```bash
-curl -X GET "http://localhost:8000/api/v1/auth/me" \
+curl -X GET "http://localhost:9000/api/v1/auth/me" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 4. Create a Task
 
 ```bash
-curl -X POST "http://localhost:8000/api/v1/tasks/" \
+curl -X POST "http://localhost:9000/api/v1/tasks/" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -345,22 +345,22 @@ curl -X POST "http://localhost:8000/api/v1/tasks/" \
 
 ```bash
 # Get all tasks with pagination
-curl -X GET "http://localhost:8000/api/v1/tasks/?skip=0&limit=10" \
+curl -X GET "http://localhost:9000/api/v1/tasks/?skip=0&limit=10" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
 # Filter by status
-curl -X GET "http://localhost:8000/api/v1/tasks/?status=todo" \
+curl -X GET "http://localhost:9000/api/v1/tasks/?status=todo" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
 # Filter by priority
-curl -X GET "http://localhost:8000/api/v1/tasks/?priority=high" \
+curl -X GET "http://localhost:9000/api/v1/tasks/?priority=high" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 6. Update a Task
 
 ```bash
-curl -X PUT "http://localhost:8000/api/v1/tasks/1" \
+curl -X PUT "http://localhost:9000/api/v1/tasks/1" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -372,7 +372,7 @@ curl -X PUT "http://localhost:8000/api/v1/tasks/1" \
 ### 7. Mark Task as Completed
 
 ```bash
-curl -X PATCH "http://localhost:8000/api/v1/tasks/1/complete" \
+curl -X PATCH "http://localhost:9000/api/v1/tasks/1/complete" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -395,7 +395,7 @@ curl -X GET "http://localhost:8000/api/v1/stats/" \
 ### 9. Delete a Task
 
 ```bash
-curl -X DELETE "http://localhost:8000/api/v1/tasks/1" \
+curl -X DELETE "http://localhost:9000/api/v1/tasks/1" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -444,10 +444,10 @@ curl -X DELETE "http://localhost:8000/api/v1/tasks/1" \
 6. **Start the application**
    ```bash
    # Development mode (with auto-reload)
-   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 9000
    
    # Production mode
-   uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+   uvicorn app.main:app --host 0.0.0.0 --port 9000 --workers 4
    ```
 
 ### Environment Variables
@@ -468,7 +468,7 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 # CORS
-BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:8000"]
+BACKEND_CORS_ORIGINS=["http://localhost:3000","http://localhost:9000"]
 ```
 
 ---
@@ -624,8 +624,8 @@ tasktracker-mono/
 
 ### Interactive API Documentation
 Once running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- **Swagger UI**: http://localhost:9000/docs
+- **ReDoc**: http://localhost:9000/redoc
 
 ### Database Schema
 
@@ -668,7 +668,7 @@ TaskTracker is a complete, production-ready FastAPI application demonstrating:
 **Get started in 2 commands:**
 ```bash
 docker compose up --build
-open http://localhost:8000/docs
+open http://localhost:9000/docs
 ```
 
 Enjoy building with TaskTracker! 🚀

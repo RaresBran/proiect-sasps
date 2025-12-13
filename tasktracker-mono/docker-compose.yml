@@ -14,7 +14,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5435:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U tasktracker -d tasktracker_db"]
       interval: 10s
@@ -47,7 +47,7 @@ services:
       ACCESS_TOKEN_EXPIRE_MINUTES: "30"
       
       # CORS
-      BACKEND_CORS_ORIGINS: '["http://localhost:3000","http://localhost:8000","http://localhost"]'
+      BACKEND_CORS_ORIGINS: '["http://localhost:3000","http://localhost:9000","http://localhost"]'
       
       # Database Pool
       DB_POOL_SIZE: "20"
@@ -58,12 +58,12 @@ services:
       # Logging
       LOG_LEVEL: "INFO"
     ports:
-      - "8000:8000"
+      - "9000:9000"
     depends_on:
       db:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health', timeout=5)"]
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:9000/health', timeout=5)"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -77,7 +77,7 @@ services:
         echo 'Running database migrations...' &&
         alembic upgrade head &&
         echo 'Starting FastAPI application...' &&
-        uvicorn app.main:app --host 0.0.0.0 --port 8000
+        uvicorn app.main:app --host 0.0.0.0 --port 9000
       "
 
 # Volumes for data persistence
