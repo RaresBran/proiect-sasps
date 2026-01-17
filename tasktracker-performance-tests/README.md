@@ -390,6 +390,39 @@ USERS=150 RUN_TIME=10m ./run_both_tests.sh
 
 ---
 
+## 🧪 Advanced Experiments
+
+Three advanced experiments are available in the `experiments/` folder for deeper analysis:
+
+### 1. Crossover Curve Parameter Sweep
+Find the exact concurrency level where microservices outperforms monolithic:
+```bash
+./experiments/run_crossover_sweep.sh           # Default (6 levels)
+./experiments/run_crossover_sweep.sh --quick   # Quick (3 levels)
+./experiments/run_crossover_sweep.sh --full    # Full (8 levels)
+```
+**Output:** `crossover_dashboard.png` - Shows the crossover point
+
+### 2. Resource Efficiency Monitor
+Measure CPU/memory usage and compute efficiency metrics:
+```bash
+./experiments/run_resource_monitor.sh          # Default
+./experiments/run_resource_monitor.sh --quick  # Quick test
+```
+**Output:** `resource_efficiency.png` - req/s per CPU & req/s per GB RAM
+
+### 3. Resilience / Failure Injection Test
+Demonstrate fault isolation by killing a microservice mid-test:
+```bash
+./experiments/run_resilience_test.sh                # Default (task-service)
+./experiments/run_resilience_test.sh user-service   # Target user-service
+```
+**Output:** `resilience_timeline.png` - Fault injection timeline with recovery
+
+📚 **Full documentation:** See [experiments/README.md](experiments/README.md)
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -411,6 +444,16 @@ tasktracker-performance-tests/
 │   ├── run_tests.sh                 # Interactive menu
 │   ├── compare_results.sh           # Compare existing results
 │   └── cleanup.sh                   # Clean old results
+│
+├── Advanced Experiments
+│   ├── experiments/
+│   │   ├── crossover_sweep.py       # Parameter sweep for crossover curves
+│   │   ├── resource_monitor.py      # CPU/memory efficiency monitoring
+│   │   ├── resilience_test.py       # Failure injection testing
+│   │   ├── run_crossover_sweep.sh   # Wrapper script
+│   │   ├── run_resource_monitor.sh  # Wrapper script
+│   │   ├── run_resilience_test.sh   # Wrapper script
+│   │   └── README.md                # Experiments documentation
 │
 ├── Setup Scripts
 │   ├── setup.sh                     # First-time setup

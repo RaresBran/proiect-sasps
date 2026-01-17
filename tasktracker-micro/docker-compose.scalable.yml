@@ -45,7 +45,7 @@ services:
     networks:
       - tasktracker_micro_network
 
-  # User Service (scalable - no container_name, no ports)
+  # User Service
   user-service:
     build:
       context: ./user-service
@@ -65,7 +65,8 @@ services:
       DB_POOL_TIMEOUT: "30"
       DB_POOL_RECYCLE: "3600"
       LOG_LEVEL: "INFO"
-    # No ports mapping - accessed via API Gateway
+    ports:
+      - "8001:8001"
     depends_on:
       user-db:
         condition: service_healthy
@@ -87,7 +88,7 @@ services:
         uvicorn app.main:app --host 0.0.0.0 --port 8001
       "
 
-  # Task Service (scalable - no container_name, no ports)
+  # Task Service
   task-service:
     build:
       context: ./task-service
@@ -106,7 +107,8 @@ services:
       DB_POOL_TIMEOUT: "30"
       DB_POOL_RECYCLE: "3600"
       LOG_LEVEL: "INFO"
-    # No ports mapping - accessed via API Gateway
+    ports:
+      - "8002:8002"
     depends_on:
       task-db:
         condition: service_healthy
@@ -128,7 +130,7 @@ services:
         uvicorn app.main:app --host 0.0.0.0 --port 8002
       "
 
-  # Stats Service (scalable - no container_name, no ports)
+  # Stats Service
   stats-service:
     build:
       context: ./stats-service
@@ -143,7 +145,8 @@ services:
       TASK_SERVICE_URL: "http://task-service:8002"
       BACKEND_CORS_ORIGINS: '["http://localhost:3000","http://localhost:8000","http://localhost"]'
       LOG_LEVEL: "INFO"
-    # No ports mapping - accessed via API Gateway
+    ports:
+      - "8003:8003"
     depends_on:
       task-service:
         condition: service_healthy

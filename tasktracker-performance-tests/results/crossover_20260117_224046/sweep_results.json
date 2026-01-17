@@ -1,0 +1,80 @@
+[
+  {
+    "architecture": "monolithic",
+    "concurrency": 25,
+    "total_requests": 620,
+    "requests_per_sec": 10.49276743395449,
+    "avg_response_time": 13.65895086801761,
+    "median_response_time": 12.0,
+    "p95_response_time": 24.0,
+    "p99_response_time": 44.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.51739001274109
+  },
+  {
+    "architecture": "microservices",
+    "concurrency": 25,
+    "total_requests": 607,
+    "requests_per_sec": 10.24192729842344,
+    "avg_response_time": 21.435580171277987,
+    "median_response_time": 19.0,
+    "p95_response_time": 44.0,
+    "p99_response_time": 70.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.262531042099
+  },
+  {
+    "architecture": "monolithic",
+    "concurrency": 75,
+    "total_requests": 1776,
+    "requests_per_sec": 29.98695320162552,
+    "avg_response_time": 10.842903869906714,
+    "median_response_time": 9.0,
+    "p95_response_time": 22.0,
+    "p99_response_time": 49.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.25376892089844
+  },
+  {
+    "architecture": "microservices",
+    "concurrency": 75,
+    "total_requests": 1745,
+    "requests_per_sec": 29.46650347911823,
+    "avg_response_time": 19.23411415805133,
+    "median_response_time": 15.0,
+    "p95_response_time": 45.0,
+    "p99_response_time": 83.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.26287794113159
+  },
+  {
+    "architecture": "monolithic",
+    "concurrency": 150,
+    "total_requests": 3309,
+    "requests_per_sec": 55.85916846664764,
+    "avg_response_time": 8.961963454388357,
+    "median_response_time": 7.0,
+    "p95_response_time": 22.0,
+    "p99_response_time": 39.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.25488901138306
+  },
+  {
+    "architecture": "microservices",
+    "concurrency": 150,
+    "total_requests": 3199,
+    "requests_per_sec": 54.10746354852821,
+    "avg_response_time": 20.48394707916836,
+    "median_response_time": 15.0,
+    "p95_response_time": 56.0,
+    "p99_response_time": 84.0,
+    "failure_count": 0,
+    "failure_rate": 0.0,
+    "test_duration_sec": 60.291831970214844
+  }
+]

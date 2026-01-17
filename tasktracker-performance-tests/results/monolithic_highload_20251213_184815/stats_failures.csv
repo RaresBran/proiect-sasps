@@ -1,0 +1,9 @@
+Method,Name,Error,Occurrences
+POST,[Tasks] Create,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] Create'),6
+DELETE,[Tasks] Delete,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] Delete'),1
+GET,[Tasks] Get Single,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] Get Single'),7
+GET,[Tasks] List Filtered,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] List Filtered'),5
+PATCH,[Tasks] Mark Incomplete,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] Mark Incomplete'),1
+PUT,[Tasks] Update,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] Update'),2
+GET,[Auth] Get User Info,HTTPError('500 Server Error: Internal Server Error for url: [Auth] Get User Info'),1
+GET,[Tasks] List All,HTTPError('500 Server Error: Internal Server Error for url: [Tasks] List All'),17

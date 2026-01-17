@@ -1,0 +1,23 @@
+[2025-12-13 18:48:16,045] Nicolas-MacBook-Pro/INFO/locust.main: Starting Locust 2.42.6
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locust.main: Run time limit set to 300 seconds
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: SETUP: Pre-creating users and tasks for testing
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Architecture: Microservices Architecture
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Base URL: http://localhost:8000
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:48:16,048] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Creating 20 users...
+[2025-12-13 18:48:22,683] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Created 10/20 users...
+[2025-12-13 18:48:29,281] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Created 20/20 users...
+[2025-12-13 18:48:29,282] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:48:29,282] Nicolas-MacBook-Pro/INFO/locustfile_microservices: SETUP COMPLETE: Created 20 users with tasks
+[2025-12-13 18:48:29,282] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Total tasks created: 200
+[2025-12-13 18:48:29,282] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:48:29,282] Nicolas-MacBook-Pro/INFO/locust.runners: Ramping to 200 users at a rate of 20.00 per second
+[2025-12-13 18:48:38,300] Nicolas-MacBook-Pro/INFO/locust.runners: All users spawned: {"TaskTrackerUser": 200} (200 total users)
+[2025-12-13 18:53:15,604] Nicolas-MacBook-Pro/INFO/locust.main: --run-time limit reached, shutting down
+[2025-12-13 18:53:15,647] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:53:15,647] Nicolas-MacBook-Pro/INFO/locustfile_microservices: TEST COMPLETED
+[2025-12-13 18:53:15,648] Nicolas-MacBook-Pro/INFO/locustfile_microservices: Architecture: Microservices Architecture
+[2025-12-13 18:53:15,648] Nicolas-MacBook-Pro/INFO/locustfile_microservices: ================================================================================
+[2025-12-13 18:53:15,685] Nicolas-MacBook-Pro/INFO/locust.main: writing html report to file: results/microservices_scaled_20251213_184815/report.html
+[2025-12-13 18:53:15,689] Nicolas-MacBook-Pro/INFO/locust.main: Shutting down (exit code 0)

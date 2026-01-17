@@ -1,3 +1,0 @@
-"""
-Shared experiment library modules.
-"""
