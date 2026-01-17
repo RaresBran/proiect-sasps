@@ -1,0 +1,1365 @@
+{
+  "arch": "microservices",
+  "concurrency": 100,
+  "duration_s": 60,
+  "warmup_s": 10,
+  "spawn_rate": 10,
+  "throughput_rps": 39.83365234056278,
+  "latency_p50_ms": 14.0,
+  "latency_p95_ms": 44.0,
+  "latency_p99_ms": 76.0,
+  "latency_avg_ms": 18.118995867600738,
+  "latency_min_ms": 6.989833986153826,
+  "latency_max_ms": 84.49987499625422,
+  "error_rate": 0.0,
+  "total_requests": 2753,
+  "total_failures": 0,
+  "start_ts": "2026-01-17T21:16:25.881947",
+  "end_ts": "2026-01-17T21:17:36.169213",
+  "raw_csv_path": "/Users/nicolacatalin/Desktop/facultate/proiect-sasps/experiments/results/sweep_20260117_210725/run_007_microservices_c100/stats_stats.csv",
+  "history_csv_path": "/Users/nicolacatalin/Desktop/facultate/proiect-sasps/experiments/results/sweep_20260117_210725/run_007_microservices_c100/stats_stats_history.csv",
+  "resources": {
+    "containers": {
+      "tasktracker_api_gateway": {
+        "container_name": "tasktracker_api_gateway",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 6.94,
+            "mem_usage_bytes": 71932313,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.59,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 11.4,
+            "mem_usage_bytes": 71974256,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.59,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 11.45,
+            "mem_usage_bytes": 72236400,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.59,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 13.79,
+            "mem_usage_bytes": 72047656,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.59,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 22.48,
+            "mem_usage_bytes": 74616668,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.61,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.39,
+            "mem_usage_bytes": 74847354,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.61,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.31,
+            "mem_usage_bytes": 77479280,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.9,
+            "mem_usage_bytes": 77280051,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 34.14,
+            "mem_usage_bytes": 77049364,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 24.5,
+            "mem_usage_bytes": 77374423,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 25.59,
+            "mem_usage_bytes": 77143736,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 29.8,
+            "mem_usage_bytes": 77196165,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.82,
+            "mem_usage_bytes": 77238108,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 29.39,
+            "mem_usage_bytes": 77112279,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 31.71,
+            "mem_usage_bytes": 76892078,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.81,
+            "mem_usage_bytes": 76671877,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.44,
+            "mem_usage_bytes": 76975964,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 29.83,
+            "mem_usage_bytes": 77049364,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 30.28,
+            "mem_usage_bytes": 77070336,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 33.22,
+            "mem_usage_bytes": 77353451,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_api_gateway",
+            "cpu_percent": 29.39,
+            "mem_usage_bytes": 76871106,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.63,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 26.0752380952381,
+          "peak_cpu_percent": 34.14,
+          "avg_mem_bytes": 75924391.85714285,
+          "peak_mem_bytes": 77479280
+        }
+      },
+      "tasktracker_user_service": {
+        "container_name": "tasktracker_user_service",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 47.28,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 75.81,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 76.24,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.28,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.31,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.24,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.45,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.07,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.81,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.45,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.3,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.28,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.45,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.53,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.38,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.25,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.31,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.5,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.44,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.5,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_user_service",
+            "cpu_percent": 0.94,
+            "mem_usage_bytes": 107583897,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.88,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 9.848571428571429,
+          "peak_cpu_percent": 76.24,
+          "avg_mem_bytes": 107583897.0,
+          "peak_mem_bytes": 107583897
+        }
+      },
+      "tasktracker_task_service": {
+        "container_name": "tasktracker_task_service",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 1.52,
+            "mem_usage_bytes": 106325606,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 2.91,
+            "mem_usage_bytes": 106325606,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 2.93,
+            "mem_usage_bytes": 106325606,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 3.04,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 7.18,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.6,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 8.18,
+            "mem_usage_bytes": 107059609,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.63,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 7.73,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.14,
+            "mem_usage_bytes": 106954752,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 7.37,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.77,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 8.38,
+            "mem_usage_bytes": 106640179,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.0,
+            "mem_usage_bytes": 106640179,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 8.88,
+            "mem_usage_bytes": 106640179,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 11.28,
+            "mem_usage_bytes": 106640179,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.7,
+            "mem_usage_bytes": 106640179,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 9.0,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 8.38,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 11.53,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_task_service",
+            "cpu_percent": 8.81,
+            "mem_usage_bytes": 106745036,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.87,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 7.807619047619048,
+          "peak_cpu_percent": 11.53,
+          "avg_mem_bytes": 106685117.61904761,
+          "peak_mem_bytes": 107059609
+        }
+      },
+      "tasktracker_stats_service": {
+        "container_name": "tasktracker_stats_service",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.08,
+            "mem_usage_bytes": 64592281,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.04,
+            "mem_usage_bytes": 64592281,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 64592281,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.57,
+            "mem_usage_bytes": 64623738,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.27,
+            "mem_usage_bytes": 64623738,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 1.03,
+            "mem_usage_bytes": 64634224,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.06,
+            "mem_usage_bytes": 64623738,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.45,
+            "mem_usage_bytes": 64634224,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.55,
+            "mem_usage_bytes": 64634224,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 6.14,
+            "mem_usage_bytes": 64623738,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.24,
+            "mem_usage_bytes": 64613253,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.92,
+            "mem_usage_bytes": 64655196,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.25,
+            "mem_usage_bytes": 64655196,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.82,
+            "mem_usage_bytes": 64655196,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.28,
+            "mem_usage_bytes": 64707624,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.28,
+            "mem_usage_bytes": 64707624,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.76,
+            "mem_usage_bytes": 64707624,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 1.18,
+            "mem_usage_bytes": 64728596,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 5.83,
+            "mem_usage_bytes": 64728596,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 1.1,
+            "mem_usage_bytes": 64697139,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_stats_service",
+            "cpu_percent": 0.61,
+            "mem_usage_bytes": 64697139,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.53,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 1.0242857142857145,
+          "peak_cpu_percent": 6.14,
+          "avg_mem_bytes": 64653697.61904762,
+          "peak_mem_bytes": 64728596
+        }
+      },
+      "tasktracker_user_db": {
+        "container_name": "tasktracker_user_db",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.21,
+            "mem_usage_bytes": 23781703,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.2,
+            "mem_usage_bytes": 23551016,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.22,
+            "mem_usage_bytes": 23613931,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.1,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.04,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.0,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.06,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.01,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.12,
+            "mem_usage_bytes": 23855104,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.03,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.03,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.06,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.04,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.07,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.05,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.07,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_user_db",
+            "cpu_percent": 0.11,
+            "mem_usage_bytes": 23592960,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.19,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 0.07714285714285715,
+          "peak_cpu_percent": 0.22,
+          "avg_mem_bytes": 23613432.095238097,
+          "peak_mem_bytes": 23855104
+        }
+      },
+      "tasktracker_task_db": {
+        "container_name": "tasktracker_task_db",
+        "samples": [
+          {
+            "timestamp": 1768677385.8781362,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 0.39,
+            "mem_usage_bytes": 40254832,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677389.4553978,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 0.75,
+            "mem_usage_bytes": 40212889,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677392.916965,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 0.78,
+            "mem_usage_bytes": 40191918,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677396.4655309,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 0.72,
+            "mem_usage_bytes": 40537948,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677400.048196,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.59,
+            "mem_usage_bytes": 40600862,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677403.092362,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.9,
+            "mem_usage_bytes": 40579891,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677406.652692,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.95,
+            "mem_usage_bytes": 40611348,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677410.199064,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.97,
+            "mem_usage_bytes": 40569405,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677413.2297778,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.94,
+            "mem_usage_bytes": 40852520,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677416.7899468,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.33,
+            "mem_usage_bytes": 40569405,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677420.3433611,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.53,
+            "mem_usage_bytes": 40653291,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677423.364991,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.95,
+            "mem_usage_bytes": 41114664,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.34,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677426.922527,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.35,
+            "mem_usage_bytes": 40569405,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677430.48195,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.85,
+            "mem_usage_bytes": 40873492,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677433.504731,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.71,
+            "mem_usage_bytes": 40590376,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677437.059092,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 2.26,
+            "mem_usage_bytes": 40653291,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677440.617467,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.84,
+            "mem_usage_bytes": 40621834,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677443.6419048,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.77,
+            "mem_usage_bytes": 40653291,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677447.190028,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 1.94,
+            "mem_usage_bytes": 40695234,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677450.739338,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 2.23,
+            "mem_usage_bytes": 40684748,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          },
+          {
+            "timestamp": 1768677453.7565749,
+            "container_name": "tasktracker_task_db",
+            "cpu_percent": 2.03,
+            "mem_usage_bytes": 40915435,
+            "mem_limit_bytes": 12262131630,
+            "mem_percent": 0.33,
+            "net_io_rx_bytes": 0,
+            "net_io_tx_bytes": 0
+          }
+        ],
+        "summary": {
+          "avg_cpu_percent": 1.6085714285714285,
+          "peak_cpu_percent": 2.26,
+          "avg_mem_bytes": 40619337.0952381,
+          "peak_mem_bytes": 41114664
+        }
+      }
+    },
+    "totals": {
+      "avg_cpu_percent": 46.441428571428574,
+      "peak_cpu_percent": 130.53,
+      "avg_mem_bytes": 419079873.28571427,
+      "peak_mem_bytes": 421821150,
+      "avg_mem_gb": 0.3902985465579799,
+      "peak_mem_gb": 0.39285155944526196
+    }
+  },
+  "efficiency": {
+    "rps_per_cpu_unit": 85.77180669474282,
+    "rps_per_gb_mem": 102.0594431925341,
+    "total_cpu_units": 0.4644142857142857,
+    "total_mem_gb": 0.3902985465579799
+  }
+}

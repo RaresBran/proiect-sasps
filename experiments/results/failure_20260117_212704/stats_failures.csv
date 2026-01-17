@@ -1,0 +1,9 @@
+Method,Name,Error,Occurrences
+DELETE,[Tasks] Delete,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Delete'),1
+GET,[Tasks] List Filtered,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] List Filtered'),41
+GET,[Tasks] Get Single,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Get Single'),29
+PATCH,[Tasks] Mark Complete,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Mark Complete'),3
+PATCH,[Tasks] Mark Incomplete,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Mark Incomplete'),3
+PUT,[Tasks] Update,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Update'),10
+GET,[Tasks] List All,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] List All'),128
+POST,[Tasks] Create,HTTPError('503 Server Error: Service Unavailable for url: [Tasks] Create'),42

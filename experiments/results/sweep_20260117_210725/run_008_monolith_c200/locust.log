@@ -1,0 +1,23 @@
+[2026-01-17 21:17:42,707] Nicolas-MacBook-Pro/INFO/locust.main: Starting Locust 2.43.1
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locust.main: Run time limit set to 70 seconds
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: SETUP: Pre-creating users and tasks for testing
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Architecture: Monolithic Architecture
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Base URL: http://localhost:9000
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:17:42,708] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Creating 20 users...
+[2026-01-17 21:17:47,041] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Created 10/20 users...
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Created 20/20 users...
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: SETUP COMPLETE: Created 20 users with tasks
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Total tasks created: 200
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:17:51,387] Nicolas-MacBook-Pro/INFO/locust.runners: Ramping to 200 users at a rate of 10.00 per second
+[2026-01-17 21:18:10,424] Nicolas-MacBook-Pro/INFO/locust.runners: All users spawned: {"TaskTrackerUser": 200} (200 total users)
+[2026-01-17 21:18:52,503] Nicolas-MacBook-Pro/INFO/locust.main: --run-time limit reached, shutting down
+[2026-01-17 21:18:52,540] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:18:52,540] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: TEST COMPLETED
+[2026-01-17 21:18:52,540] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: Architecture: Monolithic Architecture
+[2026-01-17 21:18:52,540] Nicolas-MacBook-Pro/INFO/locustfile_monolithic: ================================================================================
+[2026-01-17 21:18:52,572] Nicolas-MacBook-Pro/INFO/locust.main: writing html report to file: /Users/nicolacatalin/Desktop/facultate/proiect-sasps/experiments/results/sweep_20260117_210725/run_008_monolith_c200/report.html
+[2026-01-17 21:18:52,575] Nicolas-MacBook-Pro/INFO/locust.main: Shutting down (exit code 0)
